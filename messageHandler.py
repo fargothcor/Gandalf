@@ -1,8 +1,25 @@
-from apiVk import sendMessage
-import DFapi
+from Gandalf.apiVk import sendMessage
+import Gandalf.DFapi as DFapi
+import os
+import importlib
+from Gandalf.command_class import command_list
 
 
-def createAnswer(data, token):
+def load_modules():
+   files = os.listdir("RomanticSoundBot/commands")
+   modules = filter(lambda x: x.endswith('.py'), files)
+   for m in modules:
+       importlib.import_module("commands." + m[0:-3])
+
+
+def create_answer(data):
     userID = data['user_id']
-    message = DFapi.get_smart_response(data['body'])
+    text = data['body']
+    if text[0] == '/':
+        load_modules()
+        for c in command_list:
+            if text == c.key:
+                message = c.process(text)
+    else:
+        message = DFapi.get_smart_response(text)
     sendMessage(userID, message)

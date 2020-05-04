@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 # vim:fileencoding=utf-8
 from flask import Flask, request, json
-from config import *
-from messageHandler import createAnswer
+from Gandalf.config import *
+from Gandalf.messageHandler import create_answer
 
 app = Flask(__name__)
 
 
 @app.route('/', methods=['POST'])
-def smartThing(): 
+def smart_thing():
     data = json.loads(request.data)
 
     if 'type' not in data.keys():
@@ -17,11 +17,11 @@ def smartThing():
     elif data['type'] == 'confirmation':
         return CONFIRMATION_TOKEN
     elif data['type'] == 'message_new':
-        createAnswer(data['object'], TOKEN)
+        create_answer(data['object'])
         return 'ok'
 
 
 @app.route('/', methods=['GET'])
-def webSite():
+def web_site():
     s = 'im fucking working'
     return s

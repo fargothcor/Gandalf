@@ -1,5 +1,5 @@
 import vk
-from config import TOKEN
+from Gandalf.config import TOKEN
 session = vk.Session()
 api = vk.API(session, v=5.50)
 
