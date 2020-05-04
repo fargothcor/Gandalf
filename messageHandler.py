@@ -6,10 +6,10 @@ from Gandalf.command_class import command_list
 
 
 def load_modules():
-   files = os.listdir("RomanticSoundBot/commands")
+   files = os.listdir("Gandalf/commands")
    modules = filter(lambda x: x.endswith('.py'), files)
    for m in modules:
-       importlib.import_module("commands." + m[0:-3])
+       importlib.import_module("Gandalf.commands." + m[0:-3])
 
 
 def create_answer(data):
