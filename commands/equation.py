@@ -12,7 +12,8 @@ def solve(s):
             x2 = (-b + math.sqrt(b*b - 4*a*c))
             alt = f"\n Альтернативный вид: x1 = ({-b} - &#8730;{b * b - 4 * a * c})/{2 * a}, " \
                 f"x2 = ({-b} + &#8730;{b * b - 4 * a * c})/{2 * a}"
-            return str(round(x1, 3)) + ' ' + str(round(x2, 3)) + alt
+            # return str(round(x1, 3)) + ' ' + str(round(x2, 3)) + alt
+            return alt
         else:
             return 'Это уравнение не имеет решений'
 
