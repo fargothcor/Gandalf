@@ -18,12 +18,13 @@ def create_answer(data):
     text = data['body']
     if userID in userInCommands:
         message = userInCommands[userID].process(text)
+        userInCommands.pop(userID)
     elif text[0] == '/':
         load_modules()
         for c in command_list:
             if text == c.key:
                 userInCommands[userID] = c
-                message = c.desription
+                message = c.description
     else:
         message = DFapi.get_smart_response(text)
     sendMessage(userID, message)
