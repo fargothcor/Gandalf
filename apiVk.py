@@ -1,7 +1,7 @@
 import vk
 from Gandalf.config import TOKEN
 session = vk.Session()
-api = vk.API(session, v=5.50)
+api = vk.API(session, v=5.107)
 
 
 def sendMessage(user_id, message, attachment=""):
