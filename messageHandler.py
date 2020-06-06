@@ -14,8 +14,8 @@ def load_modules():
 
 
 def create_answer(data):
-    userID = data['peer_id']
-    text = data['text']
+    userID = data['message']['peer_id']
+    text = data['message']['text']
     if userID in userInCommands:
         message = userInCommands[userID].process(text)
         userInCommands.pop(userID)
