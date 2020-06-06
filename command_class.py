@@ -7,6 +7,7 @@ class Command:
         command_list.append(self)
         self.args = ''
         self.description = ''
+        self.isLong = 0
 
     def process(self):
         pass

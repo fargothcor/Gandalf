@@ -21,5 +21,6 @@ def solve(s):
 
 foo = cc.Command()
 foo.key = '/equation'
-foo.description = 'Решаю уравнения вида ax^2+bx+c=0 за вас. Введи коэффициенты a b c через пробел, и я скажу x1 и x2/'
+foo.description = 'Решаю уравнения вида ax^2+bx+c=0 за вас. Введи коэффициенты a b c через пробел, и я скажу x1 и x2'
+foo.isLong = 1
 foo.process = solve

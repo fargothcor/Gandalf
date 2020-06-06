@@ -23,8 +23,11 @@ def create_answer(data):
         load_modules()
         for c in command_list:
             if text == c.key:
-                userInCommands[userID] = c
-                message = c.description
+                if c.isLong == 1:
+                    userInCommands[userID] = c
+                    message = c.description
+                else:
+                    message = c.process()
     else:
         message = DFapi.get_smart_response(text)
     sendMessage(userID, message)
