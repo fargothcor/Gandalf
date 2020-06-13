@@ -9,7 +9,7 @@ def hoho():
         'https://www.youtube.com/watch?v=V9AbeALNVkk',
         'https://www.youtube.com/watch?v=djV11Xbc914'
     ]
-    return videos[ri(len(videos))]
+    return videos[ri(0, len(videos))]
 
 
 foo = cc.Command()

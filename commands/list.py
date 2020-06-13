@@ -4,7 +4,7 @@ import Gandalf.command_class as cc
 def solve():
     resp = ''
     for c in cc.command_list:
-        resp += c.key + ' - ' + c.description
+        resp += c.key + ' - ' + c.description + '\n'
     return resp
 
 
